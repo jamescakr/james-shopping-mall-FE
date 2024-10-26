@@ -13,9 +13,13 @@ export const loginWithEmail = createAsyncThunk(
 
       return response.data;
     } catch (error) {
+      console.log("LLogin Errrrror", error);
+
       // 실패시 생긴 에러값을 reducer에 저장 /
-      // return rejectWithValue(error.error); //error랑 message랑 무슨차이지??
-      return rejectWithValue(error.message);
+      return rejectWithValue(
+        error.response?.data?.message || "로그인에 실패했습니다"
+      );
+      //error랑 message랑 무슨차이지??
     }
   }
 );

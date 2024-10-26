@@ -16,13 +16,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    if (loginError) {
-      setTimeout(() => {
-        dispatch(clearErrors());
-      }, 3000); 
-    }
-  }, [loginError, dispatch]);
+  useEffect(() => {}, [loginError]);
 
   const handleLoginWithEmail = (event) => {
     event.preventDefault();
