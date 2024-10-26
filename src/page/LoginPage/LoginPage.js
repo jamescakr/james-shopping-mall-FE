@@ -18,9 +18,12 @@ const Login = () => {
 
   useEffect(() => {
     if (loginError) {
-      dispatch(clearErrors());
+      setTimeout(() => {
+        dispatch(clearErrors());
+      }, 3000); 
     }
-  }, [navigate]);
+  }, [loginError, dispatch]);
+
   const handleLoginWithEmail = (event) => {
     event.preventDefault();
     dispatch(loginWithEmail({ email, password }));

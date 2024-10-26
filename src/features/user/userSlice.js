@@ -13,8 +13,9 @@ export const loginWithEmail = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      // 실패시 생긴 에러값을 reducer에 저장 / 실패
-      return rejectWithValue(error.error);
+      // 실패시 생긴 에러값을 reducer에 저장 /
+      // return rejectWithValue(error.error); //error랑 message랑 무슨차이지??
+      return rejectWithValue(error.message);
     }
   }
 );
