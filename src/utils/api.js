@@ -5,8 +5,8 @@ const LOCAL_BACKEND = process.env.REACT_APP_LOCAL_BACKEND;
 // const BACKEND_PROXY = process.env.REACT_APP_BACKEND_PROXY;
 // console.log("proxy", BACKEND_PROXY);
 const api = axios.create({
-  baseURL: process.env.REACT_APP_BACKEND_URL,
-  // baseURL: LOCAL_BACKEND,
+  baseURL: process.env.REACT_APP_BACKEND_URL, //배포할땐 이거 켜야 작동함!!! 제발!!!! ㅠㅠ
+  // baseURL: LOCAL_BACKEND, 로컬에서 작업할때 이거 켜야 작동함!!!!!!!! 이거몰라서 3시간 날림!!!!!!주의!!
   headers: {
     "Content-Type": "application/json",
     authorization: `Bearer ${sessionStorage.getItem("token")}`,
